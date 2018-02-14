@@ -1,0 +1,16 @@
+.GRTreeItem {
+  position: relative;
+}
+
+.GRTreeItem::before {
+  font-family: 'FontAwesome';
+  content: '\f107';
+  position: absolute;
+  left: 5px;
+  top: 0px;
+  display: block;
+}
+
+.CaseDetailsItem {
+  height: 50px;
+}
