@@ -8,7 +8,7 @@ import capybaraApp from './reducers'
 import registerServiceWorker from './registerServiceWorker'
 import { loadState, saveState} from './localStorage'
 
-import './index.css'
+import './styles/css/main.css'
 
 const persistedState = loadState()
 const store = createStore(

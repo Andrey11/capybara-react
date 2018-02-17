@@ -1,22 +1,24 @@
 import React from 'react';
-import './AdvancedSearchPanel.css';
 import AdvancedSearchCancelButtonContainer from '../containers/advancedsearch/AdvancedSearchCancelButtonContainer'
 import AdvancedSearchActionButtonContainer from '../containers/advancedsearch/AdvancedSearchActionButtonContainer'
 import PropTypes from 'prop-types';
 
-const AdvancedSearchPanel = ({ visible }) => {
+const AdvancedSearchPanel = ({
+  visible,
+  blockCls, elementCls, hiddenCls, visibleCls }) => {
 
-  let visibilityClass = visible ? ' AdvancedSearchPanelShow' : ' AdvancedSearchPanelHide';
+  let modifierCls = visible ? visibleCls : hiddenCls;
+  let panelCls = [blockCls, elementCls, modifierCls].join(' ');
 
   return (
-    <div className={'AdvancedSearchPanel' + visibilityClass}>
-      <div className='AdvancedSearchPanelHeader'>
+    <div className={panelCls}>
+      <div className='panel__advanced-search-header'>
         <AdvancedSearchCancelButtonContainer />
       </div>
-      <div className='AdvancedSearchPanelBody'>
+      <div className='panel__advanced-search-body'>
         Advanced SEARCH
       </div>
-      <div className='AdvancedSearchPanelFooter'>
+      <div className='panel__advanced-search-footer'>
         <AdvancedSearchActionButtonContainer />
         <AdvancedSearchCancelButtonContainer />
       </div>
@@ -26,6 +28,13 @@ const AdvancedSearchPanel = ({ visible }) => {
 
 AdvancedSearchPanel.propTypes = {
   visible: PropTypes.bool.isRequired
+}
+
+AdvancedSearchPanel.defaultProps = {
+  blockCls: 'panel',
+  elementCls: 'panel__advanced-search',
+  hiddenCls: 'panel--hidden',
+  visibleCls: 'panel--visible',
 }
 
 export default AdvancedSearchPanel
