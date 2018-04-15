@@ -46,7 +46,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = {
   onOpening: () => onSidePanelSearchHeaderCollapsed({sidePanelCaseNodeOpen: true}),
   onClosing: () => onSidePanelSearchHeaderCollapsed({sidePanelCaseNodeOpen: false}),
-  onSidePanelCaseNodeSelected: onSidePanelCaseNodeSelected
+  // onSidePanelCaseNodeSelected: onSidePanelCaseNodeSelected
 }
 
 export default connect(

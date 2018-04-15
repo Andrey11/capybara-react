@@ -108,6 +108,23 @@ export const onSidePanelCaseNodeSelected = nodeId => (dispatch, getState) => {
   dispatch(onSetActiveSidePanel('CASE'))
 }
 
+
+export const SHOW_CASE_SETTINGS_MENU = 'SHOW_CASE_SETTINGS_MENU'
+export const showCaseSettings = (event, source) => (dispatch, getState) => {
+  dispatch({
+    type: SHOW_CASE_SETTINGS_MENU,
+    top: event.currentTarget.offsetTop,
+    left: event.currentTarget.offsetLeft
+  })
+}
+
+export const HIDE_CASE_SETTINGS_MENU = 'HIDE_CASE_SETTINGS_MENU'
+export const hideCaseSettings = (opt) => (dispatch, getState) => {
+  dispatch({
+    type: HIDE_CASE_SETTINGS_MENU
+  })
+}
+
 export const CLOSE_CASE = 'CLOSE_CASE'
 export const closeCase = () => (dispatch, getState) => {
   dispatch(resetCurrentCase())
@@ -128,7 +145,7 @@ export const loadCase = id => (dispatch, getState) => {
     type: LOAD_CASE,
     caseId: caseId
   })
-  setTimeout(() => dispatch(loadCaseData(caseId)), 500)
+  setTimeout(() => dispatch(loadCaseData(caseId)), 700)
 }
 
 const loadCaseData = caseId => ({

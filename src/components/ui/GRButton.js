@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { onButtonClick } from '../../actions'
 import PropTypes from 'prop-types'
 
@@ -14,17 +15,17 @@ export const GRButtonTypes = ({
 class GRButton extends Component {
 
   constructor(props) {
-    super(props);
-    this.onClickHandler = this.onClickHandler.bind(this);
+    super(props)
+    this.onClickHandler = this.onClickHandler.bind(this)
   }
 
   onClickHandler(event) {
-    event.preventDefault();
-    event.stopPropagation();
+    event.preventDefault()
+    event.stopPropagation()
 
     // if (this.props.action) {
-      // this.props.dispatch(this.props.onClick())
-    this.props.onClick()
+      // this.props.dispatch(this.props.onClick({event: event, source: this}))
+    this.props.onClick(event, this);
     // }
   }
 
@@ -36,8 +37,8 @@ class GRButton extends Component {
             className='grbutton grbutton_icon'
             onClick={this.onClickHandler}>
             <span className='grbutton_inner'>
-              <i className={'fas ' + this.props.icon}></i>
               {this.props.text}
+              <FontAwesomeIcon icon={this.props.icon} />
             </span>
           </div>
       )
@@ -78,7 +79,7 @@ class GRButton extends Component {
 
 GRButton.propTypes = {
   text: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.object,
   disabled: PropTypes.bool.isRequired,
   type: PropTypes.oneOf([
     GRButtonTypes.ICON,
@@ -91,7 +92,7 @@ GRButton.propTypes = {
 
 GRButton.defaultProps = {
   text: '',
-  icon: '',
+  icon: null,
   disabled: false,
   type: GRButtonTypes.TEXT_ICON,
   action: null,

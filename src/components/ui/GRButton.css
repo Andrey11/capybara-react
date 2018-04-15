@@ -33,7 +33,7 @@
   align-items: center;
   height: inherit;
 }
-
+/* 
 .grbutton i {
   font-family: "FontAwesome";
   margin-right: 8px;
@@ -43,7 +43,7 @@
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-}
+} */
 
 .grbutton::before {
   margin-right: 8px;

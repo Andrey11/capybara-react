@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { onSidePanelHeaderCollapsed } from '../../../actions'
 import GRTree from '../../../components/ui/list/GRTree'
 import GRTreeItem from '../../../components/ui/list/GRTreeItem'
-
+import { faBookmark } from '@fortawesome/fontawesome-free-solid'
 const emptyCaseData = {
   name: '',
   folders: [],
@@ -24,6 +24,7 @@ const SidePanelCaseLabelDetailsContainer = ({
       children={children}
       onOpening={onOpening}
       onClosing={onClosing}
+      triggerIcon={faBookmark}
     />
   )
 }

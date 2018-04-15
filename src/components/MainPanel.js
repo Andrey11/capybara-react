@@ -9,7 +9,7 @@ const MainPanel = ({ mode }) => {
   return (
     <div>
       {/* main search + search results view */}
-      <AdvancedSearchPanelContainer />
+      <AdvancedSearchPanelContainer className='panel' />
       <SearchBarPanel />
       <SearchResultsContainer />
     </div>

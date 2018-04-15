@@ -38,23 +38,23 @@
   } */
 }
 
-.Collapsible__trigger::after {
+/* .Collapsible__trigger::after {
   font-family: 'FontAwesome';
   content: '\f107';
   position: absolute;
   right: 10px;
   top: 10px;
-  display: block;
+  display: inline-block;
   transition: transform 300ms;
-}
+} */
 
 .Collapsible__trigger.is-open {
   color: white;
 }
 
-.Collapsible__trigger.is-open::after {
+/* .Collapsible__trigger.is-open::after {
   transform: rotateZ(180deg);
-}
+} */
 
 .Collapsible__trigger.is-closed {
   color: yellow;

@@ -1,0 +1,10 @@
+.SidePanelHeader {
+  display: flex;
+  flex-direction: row;
+  height: 36px;
+  background-color: #DDDDDD; }
+
+.SidePanelHeader_text {
+  flex: 1;
+  align-self: center;
+  margin-left: 10px; }

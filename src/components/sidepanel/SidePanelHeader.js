@@ -1,4 +1,5 @@
 import React from 'react'
+import { faArrowLeft } from '@fortawesome/fontawesome-free-solid'
 import Button, {GRButtonTypes} from '../ui/GRButton'
 import PropTypes from 'prop-types'
 
@@ -12,6 +13,7 @@ const SidePanelHeader = ({
   onBackButtonClick,
   maximizeSidePanel,
   minimizeSidePanel}) => {
+
   if (isMinimized) {
     return (
       <div className='SidePanelHeader'>
@@ -27,7 +29,7 @@ const SidePanelHeader = ({
        { showBackButton ? (
          <Button
            type={GRButtonTypes.ICON}
-           icon='fa-arrow-left'
+           icon={faArrowLeft}
            onClick={onBackButtonClick} />
        ) : (
          null
@@ -43,7 +45,7 @@ const SidePanelHeader = ({
 
 SidePanelHeader.propTypes = {
   isMinimized: PropTypes.bool.isRequired,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
   maximizeSidePanel: PropTypes.func,
   minimizeSidePanel: PropTypes.func,

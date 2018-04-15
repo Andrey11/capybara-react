@@ -5,7 +5,9 @@ import {
   CASE_LOADED,
   CASE_ITEM_SELECTED,
   RESET_CURRENT_CASE,
-  SIDE_PANEL_CASE_HEADER_COLLAPSED
+  SIDE_PANEL_CASE_HEADER_COLLAPSED,
+  SHOW_CASE_SETTINGS_MENU,
+  HIDE_CASE_SETTINGS_MENU
 } from '../actions'
 
 const initCase = {
@@ -16,6 +18,30 @@ const initCase = {
   folderNodeOpen: true,
   labelNodeOpen: true,
   data: null
+}
+
+const initCaseSettingsMenu = {
+  isCaseSettingsMenuVisible: false,
+  top: 0,
+  left: 0
+}
+
+function caseSettingsMenu (state = initCaseSettingsMenu, action) {
+
+  switch (action.type) {
+    case SHOW_CASE_SETTINGS_MENU:
+      return Object.assign({}, state, {
+        isCaseSettingsMenuVisible: true,
+        top: action.top + 'px',
+        left: action.left + 'px'
+      })
+    case HIDE_CASE_SETTINGS_MENU:
+      return Object.assign({}, state, {
+        isCaseSettingsMenuVisible: false
+      })
+    default:
+      return state
+  }
 }
 
 function currentCase (state = initCase, action) {
@@ -80,6 +106,7 @@ function recent (state = recentCasesInitialState, action) {
 const caseData = combineReducers({
   currentCase,
   recent,
+  caseSettingsMenu
 })
 
 export default caseData

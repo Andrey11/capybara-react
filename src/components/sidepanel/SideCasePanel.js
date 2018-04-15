@@ -7,9 +7,13 @@ import './SideCasePanel.css'
 
 class SideCasePanel extends Component {
 
-  // constructor(props) {
-  //   super(props)
-  // }
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      isClosing: false
+    }
+  }
 
   componentDidMount() {
     if (this.props.shouldLoadCase) {
@@ -17,12 +21,16 @@ class SideCasePanel extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.setState({isClosing: true});
+  }
+
   render() {
 
     const { isMinimized, onBackButtonClick, children } = this.props
 
     return (
-      <div>
+      <div className={this._getPanelCls(this.state.isClosing)}>
         <SidePanelHeaderContainer
           title='CASE'
           showBackButton={true}
@@ -35,6 +43,10 @@ class SideCasePanel extends Component {
         ) }
       </div>
     )
+  }
+
+  _getPanelCls(isClosing) {
+    return 'sidepanel-case' + (isClosing ? ' closing' : '')
   }
 }
 

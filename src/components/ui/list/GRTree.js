@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import GRTreeTrigger from './GRTreeTrigger'
 import Collapsible from 'react-collapsible'
 import PropTypes from 'prop-types'
 
@@ -22,7 +23,13 @@ class GRTree extends Component {
   render() {
     return (
       <Collapsible
-        trigger={this.props.title}
+        trigger={
+          <GRTreeTrigger
+            title={this.props.title}
+            isOpen={this.props.open}
+            triggerIcon={this.props.triggerIcon}
+          />
+        }
         open={this.props.open}
         onOpening={this.onOpening}
         onClosing={this.onClosing}>
@@ -35,6 +42,7 @@ class GRTree extends Component {
 GRTree.propTypes = {
   title: PropTypes.string,
   icon: PropTypes.string,
+  triggerIcon: PropTypes.object,
   open: PropTypes.bool,
   onOpening: PropTypes.func,
   onClosing: PropTypes.func,

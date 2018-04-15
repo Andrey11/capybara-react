@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import GRButton from '../GRButton'
-import './GRTreeItem.css'
 
 class GRTreeItem extends Component {
 
@@ -38,7 +37,7 @@ GRTreeItem.propTypes = {
 }
 
 GRTreeItem.defaultProps = {
-  className: 'GRTreeItem'
+  className: 'gr__tree-item'
 }
 
 export default connect()(GRTreeItem)
