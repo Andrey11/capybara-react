@@ -6,16 +6,12 @@ import PropTypes from 'prop-types'
 
 class GRTreeTrigger extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
 
     return (
-      <div className='gr__tree-trigger'>
+      <div className='gr-ui__tree-trigger'>
         { this._getTriggerOptionalIcon(this.props.triggerIcon) }
-        <div className='gr__tree-trigger-text'>
+        <div className='gr-ui__tree-trigger-text'>
           {this.props.title}
         </div>
         <FontAwesomeIcon
@@ -34,7 +30,7 @@ class GRTreeTrigger extends Component {
   }
 
   _getIconCls(isOpen) {
-    return 'gr__tree-trigger-icon' + (isOpen ? ' open' : '')
+    return 'gr-ui__tree-trigger-icon' + (isOpen ? ' open' : '')
   }
 }
 

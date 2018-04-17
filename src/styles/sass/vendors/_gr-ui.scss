@@ -4,7 +4,43 @@ $loader-background-color: rgba(black, 1) !default;
 $loader-opacity: 0.5 !default;
 $loader-font-size: 1em !default;
 
-.gr {
+.gr-ui {
+
+  &__button {
+    color: white;
+    background-color: #3498db;
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #52a7e0;
+    }
+
+    &:focus {
+      background-color: #52a7e0;
+    }
+
+    &:active {
+      background-color: #3498db;
+    }
+
+    &:disabled {
+      background-color: #7bbce8;
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+    }
+
+    &-icon {
+      width: 36px;
+      height: 36px;
+    }
+  }
 
   &__tree {
 
@@ -27,7 +63,6 @@ $loader-font-size: 1em !default;
     }
   }
 
-  // LOADER
   &__loader {
     position: absolute;
     color: $loader-icon-color;
@@ -45,25 +80,6 @@ $loader-font-size: 1em !default;
       -webkit-animation: fa-spin $loader-spin-speed infinite linear;
       animation: fa-spin $loader-spin-speed infinite linear;
     }
-
-    // & i {
-    //   margin-right: 8px;
-    //   margin-left: 6px;
-    //   overflow: visible;
-    //   display: inline-block;
-    //   font-family: "FontAwesome";
-    //   font-style: normal;
-    //   font-size: $loader-font-size;
-    //   font-variant: normal;
-    //   text-rendering: auto;
-    //   -webkit-font-smoothing: antialiased;
-    //   animation: gr-loader-logo-spin infinite $loader-spin-speed linear;
-    // }
-    //
-    // &::before {
-    //   margin-right: 8px;
-    //   display: inline-block;
-    // }
   }
 
   &__menu {
@@ -72,13 +88,43 @@ $loader-font-size: 1em !default;
     user-select: none;
     background-color: #ffffff;
     box-sizing: border-box;
-    box-shadow: rgba(0, 0, 0, .3) 0 10px 20px, rgb(238, 238, 238) 0 0 0 1px;
-    padding: 5px 0;
+    box-shadow: rgba(0, 0, 0, .1) 2px 4px 5px, rgb(238, 238, 238) 0 0 0 1px;
+    z-index: 50;
+    border: 1px thin rgba(120, 120, 120, 1);
+    border-radius: 3px;
+
+    &:after, &:before {
+      right: 100%;
+      // top: 50%;
+      top: 20px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &:before {
+      border-color: rgba(194, 225, 245, 0);
+      border-right-color: rgba(120, 120, 120, 0.6);
+      border-width: 12px;
+      margin-top: -12px;
+    }
+
+    &:after {
+      border-color: rgba(223, 230, 230, 0);
+      border-right-color: white;
+
+      border-width: 10.5px;
+      margin-top: -10.5px;
+    }
+
+
+    &-content {
+      width: 200px;
+      height: 400px;
+    }
   }
 
-}
-
-@keyframes gr-loader-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

@@ -37,7 +37,7 @@ GRTreeItem.propTypes = {
 }
 
 GRTreeItem.defaultProps = {
-  className: 'gr__tree-item'
+  className: 'gr-ui__tree-item'
 }
 
 export default connect()(GRTreeItem)

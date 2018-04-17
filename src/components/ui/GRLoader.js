@@ -13,7 +13,7 @@ class GRLoader extends PureComponent {
     }
 
     return (
-      <div className='gr__loader'>
+      <div className='gr-ui__loader'>
         <FontAwesomeIcon
           className='fa-spin'
           icon={faSpinner}

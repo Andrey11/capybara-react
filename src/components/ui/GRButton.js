@@ -4,8 +4,6 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { onButtonClick } from '../../actions'
 import PropTypes from 'prop-types'
 
-import './GRButton.css'
-
 export const GRButtonTypes = ({
   ICON: 'ICON',
   TEXT: 'TEXT',
@@ -34,9 +32,9 @@ class GRButton extends Component {
     if (this.props.type === GRButtonTypes.ICON) {
       return (
           <div
-            className='grbutton grbutton_icon'
+            className='gr-ui__button gr-ui__button-icon'
             onClick={this.onClickHandler}>
-            <span className='grbutton_inner'>
+            <span className='gr-ui__button-inner'>
               {this.props.text}
               <FontAwesomeIcon icon={this.props.icon} />
             </span>
@@ -45,9 +43,9 @@ class GRButton extends Component {
     } else if (this.props.type === GRButtonTypes.TEXT) {
       return (
           <div
-            className='grbutton'
+            className='gr-ui__button'
             onClick={this.onClickHandler}>
-            <span className='grbutton_inner'>
+            <span className='gr-ui__button-inner'>
               {this.props.text}
             </span>
           </div>
@@ -64,9 +62,9 @@ class GRButton extends Component {
     // </div>
     return (
         <div
-          className='grbutton'
+          className='gr-ui__button'
           onClick={this.onClickHandler}>
-          <span className='grbutton_inner'>
+          <span className='gr-ui__button-inner'>
             {this.props.text}
           </span>
         </div>

@@ -15,53 +15,53 @@ class GRMenu extends Component {
   }
 
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.hide = this.hide.bind(this);
+    this.hide = this.hide.bind(this)
   }
 
   hide () {
     this.unBindWindowEvent()
-    this.props.onMenuClose();
+    this.props.onMenuClose()
   }
 
   bindWindowEvent = () => {
-    window.addEventListener('resize', this.hide);
-    window.addEventListener('contextmenu', this.hide);
-    window.addEventListener('mousedown', this.hide);
-    window.addEventListener('click', this.hide);
-    window.addEventListener('scroll', this.hide);
-  };
+    window.addEventListener('resize', this.hide)
+    window.addEventListener('contextmenu', this.hide)
+    window.addEventListener('mousedown', this.hide)
+    window.addEventListener('click', this.hide)
+    window.addEventListener('scroll', this.hide)
+  }
 
   unBindWindowEvent = () => {
-    window.removeEventListener('resize', this.hide);
-    window.removeEventListener('contextmenu', this.hide);
-    window.removeEventListener('mousedown', this.hide);
-    window.removeEventListener('click', this.hide);
-    window.removeEventListener('scroll', this.hide);
-  };
+    window.removeEventListener('resize', this.hide)
+    window.removeEventListener('contextmenu', this.hide)
+    window.removeEventListener('mousedown', this.hide)
+    window.removeEventListener('click', this.hide)
+    window.removeEventListener('scroll', this.hide)
+  }
 
-  onMouseEnter = () => window.removeEventListener('mousedown', this.hide);
+  onMouseEnter = () => window.removeEventListener('mousedown', this.hide)
 
-  onMouseLeave = () => window.addEventListener('mousedown', this.hide);
+  onMouseLeave = () => window.addEventListener('mousedown', this.hide)
 
 
   render() {
 
     if (!this.props.visible) {
-      return null;
+      return null
     }
 
     this.bindWindowEvent()
 
     return (
       <div
-        className={'gr__menu ' + this.props.className}
+        className={'gr-ui__menu ' + this.props.className}
         style={this.props.style}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
       >
-        <ul>
+        <ul className={'gr-ui__menu-content'}>
           <li>Dummy1</li>
           <li>Dummy2</li>
           <li>Dummy3</li>

@@ -114,7 +114,7 @@ export const showCaseSettings = (event, source) => (dispatch, getState) => {
   dispatch({
     type: SHOW_CASE_SETTINGS_MENU,
     top: event.currentTarget.offsetTop,
-    left: event.currentTarget.offsetLeft
+    left: event.currentTarget.offsetLeft + event.currentTarget.offsetWidth + 15
   })
 }
 
